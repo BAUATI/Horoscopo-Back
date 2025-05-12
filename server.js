@@ -30,10 +30,7 @@ const limiter = rateLimit({
 })
 app.use(limiter)
 
-// Logging en desarrollo
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"))
-}
+app.use(morgan())
 
 // Rutas
 app.use("/api/horoscope", horoscopeRoutes)
